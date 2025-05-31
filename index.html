@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>MidTrack</title>
+</head>
+<body>
+
+<div class="content">
+    <h1 class="title">Mid Track</h1>
+    <p class="subtitle">Crie uma senha para ativar sua conta!</p>
+
+    <form action="alterar_senha.php" method="post">
+        <input type="hidden" name="cpf" value="12345678900"> <!-- Passe o CPF via hidden ou sessão -->
+
+        <label for="senha">Senha</label>
+        <div class="input-wrapper">
+            <input class="input" type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+            <span class="toggle" onclick="togglePassword('senha')">👁️</span>
+        </div>
+
+        <label for="confirmar">Confirme a senha</label>
+        <div class="input-wrapper">
+            <input class="input" type="password" id="confirmar" name="confirmar" placeholder="Digite sua senha" required>
+            <span class="toggle" onclick="togglePassword('confirmar')">👁️</span>
+        </div>
+
+        <button class="button" type="submit">Confirmar</button>
+    </form>
+
+</div>
+
+<script>
+    function togglePassword(id) {
+        const input = document.getElementById(id);
+        input.type = input.type === "password" ? "text" : "password";
+    }
+</script>
+
+<script>
+    function togglePassword(id) {
+        const input = document.getElementById(id);
+        input.type = input.type === "password" ? "text" : "password";
+    }
+
+    // Pegar token da URL e inserir no campo hidden
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+    document.getElementById("tokenField").value = token;
+</script>
+
+</body>
+</html>
