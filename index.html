@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,18 +38,14 @@
         const input = document.getElementById(id);
         input.type = input.type === "password" ? "text" : "password";
     }
-</script>
-
-<script>
-    function togglePassword(id) {
-        const input = document.getElementById(id);
-        input.type = input.type === "password" ? "text" : "password";
-    }
 
     // Pegar token da URL e inserir no campo hidden
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get('token');
     document.getElementById("tokenField").value = token;
+
+    // Mostrar no console para testar
+    console.log("Token capturado da URL:", token);
 </script>
 
 </body>
